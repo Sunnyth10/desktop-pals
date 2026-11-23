@@ -334,7 +334,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
    <p class="body-3 muted sub">Tiny animated companions that live on top of everything you do. Watch YouTube. Chat on WhatsApp. Write code. A cat, a fox, a robot, a web-slinging hero, or a ghost hangs out right there with you.</p>
    <div class="dlrow">
     <button class="btn button-lg" type="button" data-dl="mac" aria-haspopup="dialog"><svg class="ic"><use href="#i-dl"/></svg>Download for Mac</button>
-    <a class="btn alt button-lg" href="#" data-dl="win"><svg class="ic"><use href="#i-dl"/></svg>Download for Windows</a>
+    <a class="btn alt button-lg" href="https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-win-x64.exe" data-dl="win" target="_blank" rel="noopener"><svg class="ic"><use href="#i-dl"/></svg>Download for Windows</a>
    </div>
    <div class="proof"><div class="stack" id="stack" aria-hidden="true"></div><p class="pt"><b class="num" id="ucount"></b><span class="caption-1" id="ulabel"></span></p></div>
   </div>
@@ -366,7 +366,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
   <div class="grid g3">
    <div class="card c1"><span class="badge"><svg class="ic"><use href="#i-ok"/></svg></span><h3 class="heading-6">Stays out of the way</h3><p class="body-3">Pals walk around your windows and never take clicks meant for your apps.</p><button class="toy button-sm" id="hideBtn">Try it: hide the pals</button></div>
    <div class="card c2"><span class="badge"><svg class="ic"><use href="#i-bolt"/></svg></span><h3 class="heading-6">Reacts to your day</h3><p class="body-3">Finish a task and your pal cheers. Step away and it curls up for a nap.</p><button class="toy button-sm" id="celebBtn">Try it: finish a task</button></div>
-   <div class="card c3"><span class="badge"><svg class="ic"><use href="#i-dl"/></svg></span><h3 class="heading-6">Light on your computer</h3><p class="body-3">Built to run quietly in the background. Memory use: &lt;150 MB (1 companion), &lt;300 MB (all 5) at &lt;3% CPU.</p><button class="toy button-sm" id="meterBtn">Try it: check usage</button></div>
+   <div class="card c3"><span class="badge"><svg class="ic"><use href="#i-dl"/></svg></span><h3 class="heading-6">Light on your computer</h3><p class="body-3">Built to run quietly in the background. Memory: &lt;150 MB, CPU: &lt;3% active. Storage: ~88 MB installer (~200 MB disk).</p><button class="toy button-sm" id="meterBtn">Try it: check usage</button></div>
   </div>
  </div>
 </section>
@@ -520,7 +520,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 <section id="faq" class="rv" data-page="faq">
  <div class="wrap faq-wrap">
   <div class="head"><h1 class="heading-2">Questions, answered</h1></div>
-  <details><summary class="title-2">Which computers and operating systems are supported?<svg class="ic"><use href="#i-plus"/></svg></summary><p class="body-3 muted">DeskPals runs natively on <strong>macOS 12 Monterey or later</strong> (dedicated builds for Apple Silicon arm64 and Intel x64) and <strong>Windows 10 (build 1903+) or Windows 11</strong> (64-bit and ARM64). Multi-monitor environments and Retina / HiDPI displays are fully supported.</p></details>
+  <details><summary class="title-2">Which computers and operating systems are supported?<svg class="ic"><use href="#i-plus"/></svg></summary><p class="body-3 muted">DeskPals runs natively on <strong>macOS 12 Monterey or later</strong> (dedicated builds for Apple Silicon arm64 at ~88 MB and Intel x64 at ~91 MB) and <strong>Windows 10 (build 1903+) or Windows 11</strong> (64-bit at ~84 MB). Storage requirement is lightweight: only <strong>~200 MB of free disk space</strong>. Multi-monitor setups and Retina / HiDPI displays are fully supported.</p></details>
   <details><summary class="title-2">Will it slow my computer down?<svg class="ic"><use href="#i-plus"/></svg></summary><p class="body-3 muted">Barely. CPU stays under 3% while active and under 1% when sleeping. Memory usage is under 150 MB for a single companion, and under 300 MB when running all 5. Frame rate runs smoothly at 60 FPS when active and dials down to ~10 FPS idle to conserve power.</p></details>
   <details><summary class="title-2">Will companions block my mouse clicks?<svg class="ic"><use href="#i-plus"/></svg></summary><p class="body-3 muted">Never. DeskPals uses a per-pixel click-through transparent overlay (NSWindow on macOS and transparent frameless window on Windows). Empty space passes clicks directly to your apps, code editor, and browser—only the companion&rsquo;s own pixels catch clicks.</p></details>
   <details><summary class="title-2">Can I have more than one pal active?<svg class="ic"><use href="#i-plus"/></svg></summary><p class="body-3 muted">Yes! You can toggle Cat, Fox, Robot, Web Hero, and Ghost individually, or have all 5 roam your screen at the same time. They can even react to and notice each other.</p></details>
@@ -575,9 +575,9 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
   <button class="dlx" id="dlx" type="button" aria-label="Close">×</button>
   <div><h2 class="heading-5" id="dlt">Choose your download</h2><p class="body-6 muted" id="dls"></p></div>
   <div class="dlg" id="dlg">
-   <div class="card c1 dlc" data-k="macArm"><span class="dlos caption-3">macOS</span><h3 class="heading-6">Apple Silicon</h3><p class="body-6">For Macs with an M series chip. Needs macOS 12 Monterey or later. About 85 MB.</p><a class="btn alt button-sm"><svg class="ic"><use href="#i-dl"/></svg>Download</a></div>
-   <div class="card c2 dlc" data-k="macIntel"><span class="dlos caption-3">macOS</span><h3 class="heading-6">Intel Mac</h3><p class="body-6">For Macs with an Intel chip. Needs macOS 12 Monterey or later. About 85 MB.</p><a class="btn alt button-sm"><svg class="ic"><use href="#i-dl"/></svg>Download</a></div>
-   <div class="card c3 dlc" data-k="win"><span class="dlos caption-3">Windows</span><span class="rtag caption-3" id="rtag" hidden>Recommended for you</span><h3 class="heading-6">Windows</h3><p class="body-6">Windows 10 (build 1903 or later) or Windows 11, 64 bit. About 79 MB.</p><a class="btn alt button-sm"><svg class="ic"><use href="#i-dl"/></svg>Download</a></div>
+   <div class="card c1 dlc" data-k="macArm"><span class="dlos caption-3">macOS</span><h3 class="heading-6">Apple Silicon</h3><p class="body-6">For Apple Silicon (M1/M2/M3/M4). macOS 12 Monterey or later. ~88 MB installer (~200 MB disk space).</p><a class="btn alt button-sm" href="https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-mac-arm64.dmg" target="_blank" rel="noopener"><svg class="ic"><use href="#i-dl"/></svg>Download</a></div>
+   <div class="card c2 dlc" data-k="macIntel"><span class="dlos caption-3">macOS</span><h3 class="heading-6">Intel Mac</h3><p class="body-6">For Intel-based Macs (x64). macOS 12 Monterey or later. ~91 MB installer (~200 MB disk space).</p><a class="btn alt button-sm" href="https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-mac-x64.dmg" target="_blank" rel="noopener"><svg class="ic"><use href="#i-dl"/></svg>Download</a></div>
+   <div class="card c3 dlc" data-k="win"><span class="dlos caption-3">Windows</span><span class="rtag caption-3" id="rtag" hidden>Recommended for you</span><h3 class="heading-6">Windows</h3><p class="body-6">Windows 10 (build 1903+) or Windows 11, 64-bit. ~84 MB installer (~200 MB disk space).</p><a class="btn alt button-sm" href="https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-win-x64.exe" target="_blank" rel="noopener"><svg class="ic"><use href="#i-dl"/></svg>Download</a></div>
   </div>
   <p class="caption-1 muted" id="dlh">Not sure which Mac you have? Open the Apple menu, then About This Mac. If the chip says Apple M1 or later, choose Apple Silicon. If it says Intel, choose Intel.</p>
  </div>
@@ -589,7 +589,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 // Set your real links here
 var DOWNLOADS={win:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-win-x64.exe",macArm:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-mac-arm64.dmg",macIntel:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-mac-x64.dmg"};
 var USERS=140; // downloads and community across releases. Update it, or set 0 to hide.
-var LINKS={privacy:"",terms:""};
+var LINKS={privacy:"https://github.com/Sunnyth10/Deskpals#-permissions-and-privacy",terms:"https://github.com/Sunnyth10/Deskpals/blob/main/LICENSE"};
 
 var PALS=[
  {id:"cat",name:"Cat (Miso)",color:"#ff6b8b",desc:"Pink and white, fluffy and judgy. Loafs on your windows, chases your cursor, and has 3 a.m. zoomies.",say:["Meow.","Loaf mode engaged.","3 a.m. zoomies!","Nice code.","Zzz"]},
@@ -662,7 +662,7 @@ var hidden=false;
 function toDesk(){if(!desk.offsetParent)location.hash="home";setTimeout(function(){desk.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"})},80)}
 $("hideBtn").onclick=function(){hidden=!hidden;pals.forEach(function(o){o.el.style.opacity=hidden?0:1});this.textContent=hidden?"Show the pals again":"Try it: hide the pals";toast(hidden?"Pals are hidden.":"Pals are back on your desktop.");toDesk()};
 $("celebBtn").onclick=function(){toDesk();setTimeout(function(){pals.forEach(function(o,i){setTimeout(function(){poke(o);talk(o,"Task done.")},i*180)})},500);toast("Task finished. Your pals are cheering.")};
-$("meterBtn").onclick=function(){toast("Memory use: <150 MB (single companion) / <300 MB (all 5). CPU: <3% active, <1% idle.")};
+$("meterBtn").onclick=function(){toast("Memory use: <150 MB (single companion) / <300 MB (all 5). CPU: <3% active. Storage: ~88 MB download, ~200 MB disk.")};
 
 // theme
 (function(){var r=document.documentElement,m=matchMedia("(prefers-color-scheme:dark)");
