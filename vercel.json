@@ -2,10 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/website/index.html" },
-    { "source": "/images/(.*)", "destination": "/website/images/$1" },
-    { "source": "/website", "destination": "/website/index.html" },
-    { "source": "/website/(.*)", "destination": "/website/$1" },
-    { "source": "/(.*)", "destination": "/website/$1" }
+    { "source": "/website/(.*)", "destination": "/$1" },
+    { "source": "/website", "destination": "/index.html" }
   ]
 }
