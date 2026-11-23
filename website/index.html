@@ -7,8 +7,10 @@
 <meta name="description" content="Tiny animated companions that live on top of everything you do. Cat, fox, robot, web hero & ghost with Pomodoro timer, task manager, and focus dashboard. 100% free and open source for macOS & Windows.">
 <meta property="og:title" content="Desktop Pals">
 <meta property="og:description" content="Small animated pals that keep your desktop company.">
+<meta property="og:image" content="images/dashboard.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="images/dashboard.png">
 <meta name="theme-color" content="#cfe0ff">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Desktop Pals","applicationCategory":"EntertainmentApplication","operatingSystem":"Windows, macOS","description":"Small animated pals that keep your desktop company."}</script>
 <link rel="icon" type="image/png" href="images/logo.png">
@@ -22,7 +24,7 @@
 :root[data-theme="dark"]{color-scheme:dark;--bg:#181818;--surface:#1F1F1F;--paper:#272727;--ink:#f4f1ff;--muted:#b7b2e6;--line:#9b97d6;--dark:#000000;--g1:#fff;--g2:#9B9B9B;--panel:rgba(24,24,24,.95)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:400;font-size:16px;line-height:24px;overflow-x:hidden}
-a{color:inherit}h1,h2,h3,h4,p{margin:0}
+a,a:visited{color:inherit}h1,h2,h3,h4,p{margin:0}
 :focus-visible{outline:2px solid var(--coral);outline-offset:4px}
 /* text styles */
 .heading-1{font-size:clamp(36px,4.2vw,54px);line-height:1.16;font-weight:600;text-wrap:balance;padding-bottom:10px}
@@ -59,10 +61,10 @@ section{padding:64px 0}@media(min-width:768px){section{padding:96px 0}}
 .nav{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:60;width:max-content;max-width:calc(100% - 32px);display:flex;align-items:center;gap:24px;padding:8px 8px 8px 16px;background:color-mix(in srgb,var(--paper) 70%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:2px solid var(--line);border-radius:9999px}
 .logo{display:flex;align-items:center;gap:8px;text-decoration:none}.logo svg{width:28px;height:28px}
 .links{display:none;gap:4px}
-.links a,.panel a.pl{text-decoration:none;padding:5px 14px;border-radius:9999px;transition:box-shadow .25s var(--ease),transform .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease)}
-.links a:not([aria-current=true]):hover,.panel a.pl:not([aria-current=true]):hover{background:color-mix(in srgb,var(--ink) 10%,transparent);box-shadow:0 3px 10px rgba(0,0,0,.15);transform:translateY(-1px);color:var(--ink)}
-a[aria-current=true]{background:var(--butter) !important;color:#1d1848 !important;font-weight:600;box-shadow:0 2px 8px color-mix(in srgb,var(--butter) 40%,transparent)}
-a[aria-current=true]:hover{background:var(--butter) !important;color:#1d1848 !important;box-shadow:0 4px 14px color-mix(in srgb,var(--butter) 60%,transparent);transform:translateY(-1px)}
+.links a,.links a:visited,.panel a.pl,.panel a.pl:visited{color:var(--ink);text-decoration:none;padding:5px 14px;border-radius:9999px;transition:box-shadow .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease)}
+.links a:not([aria-current=true]):hover,.links a:not([aria-current=true]):visited:hover,.panel a.pl:not([aria-current=true]):hover,.panel a.pl:not([aria-current=true]):visited:hover{background:color-mix(in srgb,var(--ink) 12%,transparent);box-shadow:0 3px 12px color-mix(in srgb,var(--ink) 18%,transparent);color:var(--ink)}
+a[aria-current=true],a[aria-current=true]:visited{background:var(--butter) !important;color:#1d1848 !important;font-weight:600;box-shadow:0 2px 8px color-mix(in srgb,var(--butter) 40%,transparent)}
+a[aria-current=true]:hover,a[aria-current=true]:visited:hover{background:var(--butter) !important;color:#1d1848 !important;box-shadow:0 4px 14px color-mix(in srgb,var(--butter) 60%,transparent)}
 .menu{width:40px;height:40px;border:2px solid var(--line);border-radius:9999px;background:var(--paper);display:grid;place-content:center;gap:4px;cursor:pointer;padding:0;margin-left:auto}
 .menu i{display:block;width:16px;height:2px;background:var(--ink);transition:transform .5s var(--ease)}
 .menu[aria-expanded=true] i:first-child{transform:translateY(3px) rotate(45deg)}
@@ -826,7 +828,7 @@ try{JSON.parse(localStorage.getItem("dp.shelf")||"[]").forEach(function(c){impor
 renderShelf();
 
 // FAQ forms: ask a question, share feedback
-var FORM_ENDPOINT="",SUPPORT_EMAIL=""; // set one: a form service URL that accepts JSON (works on your own domain), or the address that should receive messages
+var FORM_ENDPOINT="",SUPPORT_EMAIL="sunnyboi0010@gmail.com"; // set one: a form service URL that accepts JSON (works on your own domain), or the address that should receive messages
 function sendForm(d){
  if(FORM_ENDPOINT)return fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){return r.ok?"ok":"fail"}).catch(function(){return"fail"});
  return Promise.resolve().then(function(){
@@ -887,7 +889,7 @@ document.querySelectorAll("[data-link]").forEach(function(a){var u=LINKS[a.datas
  document.addEventListener("pointermove",function(e){
   tx=e.clientX+28;ty=e.clientY+28;last=performance.now();
   if(!started){x=tx;y=ty;started=true;b.classList.add("on")}
-  b.classList.toggle("away",!!(e.target.closest&&e.target.closest(".desk,.panel")));
+  b.classList.toggle("away",!!(e.target.closest&&e.target.closest(".desk,.panel,.nav")));
  });
  document.addEventListener("pointerdown",function(){if(!started)return;b.classList.remove("hop");void b.offsetWidth;b.classList.add("hop");setTimeout(function(){b.classList.remove("hop")},750)});
  function loop(t){
