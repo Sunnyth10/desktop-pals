@@ -569,7 +569,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 </main>
 
 <footer>
- <div class="wrap caption-1 muted"><span>© 2026 Desktop Pals</span><nav aria-label="Legal"><a href="#" data-link="privacy">Privacy policy</a><a href="#" data-link="terms">Terms of use</a><a href="#collections">Collections</a><a href="#faq">FAQ</a><a href="#top">Back to top</a></nav></div>
+ <div class="wrap caption-1 muted"><span>© 2026 Desktop Pals</span><nav aria-label="Legal"><a href="#" data-link="privacy">Privacy policy</a><a href="#" data-link="terms">Terms of use</a><a href="https://github.com/Sunnyth10/Deskpals" target="_blank" rel="noopener">GitHub</a><a href="#collections">Collections</a><a href="#faq">FAQ</a><a href="#top">Back to top</a></nav></div>
 </footer>
 <div class="buddy" id="buddy" aria-hidden="true"><div class="bf" id="bf"></div><span class="bz caption-3">Zzz</span></div>
 <div class="dlm" id="dlm" role="dialog" aria-modal="true" aria-labelledby="dlt" hidden>
@@ -591,7 +591,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 // Set your real links here
 var DOWNLOADS={win:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-win-x64.exe",macArm:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-mac-arm64.dmg",macIntel:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.1.0/DeskPals-mac-x64.dmg"};
 var USERS=140; // downloads and community across releases. Update it, or set 0 to hide.
-var LINKS={privacy:"https://github.com/Sunnyth10/Deskpals#-permissions-and-privacy",terms:"https://github.com/Sunnyth10/Deskpals/blob/main/LICENSE"};
+var LINKS={privacy:"https://github.com/Sunnyth10/Deskpals#-permissions-and-privacy",terms:"https://github.com/Sunnyth10/Deskpals/blob/main/LICENSE",github:"https://github.com/Sunnyth10/Deskpals"};
 
 var PALS=[
  {id:"cat",name:"Cat (Miso)",color:"#ff6b8b",desc:"Pink and white, fluffy and judgy. Loafs on your windows, chases your cursor, and has 3 a.m. zoomies.",say:["Meow.","Loaf mode engaged.","3 a.m. zoomies!","Nice code.","Zzz"]},
@@ -866,13 +866,75 @@ dlm.addEventListener("keydown",function(e){if(e.key==="Escape")closeDl();
  if(e.key==="Tab"){var f=[].filter.call(dlm.querySelectorAll("button,a[href]"),function(x){return x.offsetParent}),a=f[0],z=f[f.length-1];
   if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}});
 
-// user count: pal avatars and a count-up number
-(function(){var n=$("ucount"),l=$("ulabel"),st=$("stack");
+// live user count: pal avatars and dynamic GitHub release download sync
+(function(){
+ var n=$("ucount"),l=$("ulabel"),st=$("stack");
  PALS.slice(0,4).forEach(function(p){var i=document.createElement("i");i.innerHTML=svg(p);st.appendChild(i)});
- if(!USERS){n.hidden=true;l.textContent="Join the people sharing their desktop with a pal";return}
- l.textContent="downloads so far, and counting";
- var t=0,f=function(ts){if(!t)t=ts;var k=Math.min(1,(ts-t)/1400);n.textContent=Math.round(USERS*(1-Math.pow(1-k,3))).toLocaleString("en-US")+(k<1?"":"+");if(k<1)requestAnimationFrame(f)};
- if(reduce)n.textContent=USERS.toLocaleString("en-US")+"+";else setTimeout(function(){requestAnimationFrame(f)},700)})();
+ 
+ var baseCount=typeof USERS==="number"?USERS:140;
+ var cachedCount=parseInt(localStorage.getItem("dp_users_count"),10)||baseCount;
+ var curVal=0;
+
+ function renderCount(target,fromVal,duration){
+  if(!target){n.hidden=true;l.textContent="Join the people sharing their desktop with a pal";return}
+  n.hidden=false;
+  l.textContent="downloads so far, and counting";
+  if(reduce){n.textContent=target.toLocaleString("en-US")+"+";curVal=target;return}
+  var start=fromVal||0,t=0,dur=duration||1400;
+  var f=function(ts){
+   if(!t)t=ts;
+   var k=Math.min(1,(ts-t)/dur);
+   curVal=Math.round(start+(target-start)*(1-Math.pow(1-k,3)));
+   n.textContent=curVal.toLocaleString("en-US")+(k<1?"":"+");
+   if(k<1)requestAnimationFrame(f);
+  };
+  requestAnimationFrame(f);
+ }
+
+ setTimeout(function(){renderCount(cachedCount,0,1400)},reduce?0:350);
+
+ // Fetch live release downloads and latest installer links directly from GitHub API
+ fetch("https://api.github.com/repos/Sunnyth10/Deskpals/releases")
+  .then(function(res){return res.ok?res.json():null})
+  .then(function(releases){
+   if(!Array.isArray(releases)||!releases.length)return;
+   var liveDls=0;
+   releases.forEach(function(rel){
+    (rel.assets||[]).forEach(function(asset){
+     if(/\.(dmg|exe|zip|tar\.gz)$/i.test(asset.name)){
+      liveDls+=(asset.download_count||0);
+     }
+    });
+   });
+   var liveTotal=Math.max(cachedCount,baseCount+liveDls);
+   localStorage.setItem("dp_users_count",liveTotal);
+   if(liveTotal!==curVal){renderCount(liveTotal,curVal,800)}
+
+   // Automatically sync latest release asset URLs if updated on GitHub
+   var latest=releases[0];
+   if(latest&&Array.isArray(latest.assets)){
+    latest.assets.forEach(function(a){
+     var name=a.name.toLowerCase();
+     var url=a.browser_download_url;
+     if(!url)return;
+     if(name.indexOf("arm64.dmg")>-1||name.indexOf("mac-arm64")>-1){DOWNLOADS.macArm=url;var el=document.querySelector('.dlc[data-k="macArm"] a');if(el)el.href=url}
+     else if(name.indexOf("x64.dmg")>-1||name.indexOf("mac-x64")>-1){DOWNLOADS.macIntel=url;var el=document.querySelector('.dlc[data-k="macIntel"] a');if(el)el.href=url}
+     else if(name.indexOf("win")>-1&&name.indexOf(".exe")>-1){DOWNLOADS.win=url;var el=document.querySelector('.dlc[data-k="win"] a');if(el)el.href=url;var hb=document.querySelector('.dlrow a[data-dl="win"]');if(hb)hb.href=url}
+    });
+   }
+  })
+  .catch(function(){/* graceful offline fallback */});
+
+ // Realtime local bump on download click
+ document.addEventListener("click",function(e){
+  var dl=e.target.closest&&e.target.closest("[data-dl], .dlc a");
+  if(dl){
+   var next=Math.max(curVal,parseInt(localStorage.getItem("dp_users_count"),10)||baseCount)+1;
+   localStorage.setItem("dp_users_count",next);
+   renderCount(next,curVal,400);
+  }
+ });
+})();
 
 // pals peeking into the screenshot slots
 document.querySelectorAll("[data-ph]").forEach(function(e){var k=document.createElement("div");k.className="peek";k.innerHTML=svg(PALS[+e.dataset.ph%PALS.length]);e.appendChild(k)});
