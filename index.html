@@ -312,6 +312,65 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 .ff .btn{justify-self:start}.ff .btn:disabled{opacity:.6;cursor:default}
 .fs{min-height:24px}
 .mood{display:flex;gap:8px;flex-wrap:wrap}
+
+/* First time setup guide */
+.setup-guide-wrap{margin-top:40px;width:100%}
+.setup-card{border:2px solid var(--line);border-radius:20px;background:var(--paper);box-shadow:6px 6px 0 var(--line);padding:0;overflow:hidden;transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+.setup-summary{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none;user-select:none;transition:background-color .2s var(--ease)}
+.setup-summary::-webkit-details-marker{display:none}
+.setup-summary:hover{background:var(--surface)}
+details.setup-card[open] .setup-summary{border-bottom:2px solid var(--line);background:var(--surface)}
+.setup-summary-left{display:grid;gap:6px}
+.setup-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:9999px;background:var(--butter);color:#1d1848;border:1.5px solid var(--line);font-weight:700;width:fit-content}
+.setup-toggle-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;background:var(--dark);color:#f4f1ff;border:1.5px solid var(--line);font-weight:700;white-space:nowrap;transition:background-color .3s var(--ease),transform .3s var(--ease)}
+.setup-toggle-pill .ic{transition:transform .4s var(--ease);width:16px;height:16px}
+details.setup-card[open] .setup-toggle-pill{background:var(--coral)}
+details.setup-card[open] .setup-toggle-pill .ic{transform:rotate(45deg)}
+.setup-content{padding:28px;display:grid;gap:24px}
+.setup-tabs{display:flex;gap:12px;border-bottom:2px solid var(--line);padding-bottom:16px;flex-wrap:wrap}
+.setup-tab{padding:10px 20px;border-radius:12px;border:2px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-weight:700;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s var(--ease)}
+.setup-tab.active{background:var(--dark);color:#f4f1ff;box-shadow:3px 3px 0 var(--line)}
+.setup-tab:hover:not(.active){background:var(--surface);transform:translateY(-2px)}
+.setup-pane{display:grid;gap:24px}
+.setup-info-box{padding:14px 18px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);font-size:14px;line-height:22px;display:flex;gap:12px;align-items:flex-start}
+.setup-info-box p{margin:0}
+.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start}
+.mockup-col{display:grid;gap:12px}
+.mockup-col-title{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
+.os-mockup{border:2px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:4px 4px 0 var(--line);background:#1a1926;color:#f4f1ff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.mac-window{background:#232230;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.mac-dots{display:flex;gap:6px}
+.mac-dot{width:10px;height:10px;border-radius:50%}
+.mac-dot.red{background:#ff5f56}.mac-dot.yellow{background:#ffbd2e}.mac-dot.green{background:#27c93f}
+.mac-alert-body{padding:20px;display:flex;gap:16px;align-items:flex-start}
+.mac-alert-icon{font-size:38px;line-height:1}
+.mac-alert-text h4{font-size:15px;font-weight:700;color:#fff;line-height:20px;margin-bottom:6px}
+.mac-alert-text p{font-size:13px;line-height:18px;color:#c0bdd8;margin:0}
+.mac-alert-foot{padding:0 20px 18px;display:flex;justify-content:flex-end;gap:10px}
+.mac-btn{padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:12px;font-weight:500;cursor:default}
+.solution-box{border:2px solid var(--line);border-radius:16px;background:var(--paper);padding:20px;display:grid;gap:16px;box-shadow:4px 4px 0 var(--line)}
+.click-badge{display:inline-flex;align-items:center;gap:6px;background:var(--coral);color:#fff;padding:3px 8px;border-radius:9999px;font-size:11px;font-weight:700;animation:badgeBounce 1.5s infinite ease-in-out}
+@keyframes badgeBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.settings-mockup{border:1.5px solid var(--line);border-radius:12px;background:var(--surface);padding:14px;display:grid;gap:10px}
+.settings-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.settings-label{font-size:13px;line-height:18px;font-weight:500;max-width:320px}
+.os-action-btn{padding:8px 16px;border-radius:8px;border:2px solid var(--line);font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:2px 2px 0 var(--line);transition:transform .2s var(--ease)}
+.os-action-btn:hover{transform:translateY(-1px);box-shadow:3px 3px 0 var(--line)}
+.os-action-btn.mac-blue{background:#2a75d3;color:#fff;border-color:#1d1848}
+.code-command-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#181822;color:#7ee787;border:2px solid var(--line);border-radius:10px;padding:8px 12px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px}
+.code-command-box code{overflow-x:auto;white-space:nowrap}
+.copy-pill{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;transition:all .2s var(--ease)}
+.copy-pill:hover{background:var(--mint);color:#1d1848}
+.win-mockup{background:#0078d7;color:#fff}
+.win-header{padding:18px 20px 10px;display:flex;align-items:center;gap:10px}
+.win-shield{width:24px;height:24px;flex-shrink:0}
+.win-header h4{font-size:18px;font-weight:600;margin:0}
+.win-body{padding:0 20px 20px;font-size:13px;line-height:19px;color:rgba(255,255,255,.9)}
+.win-step-box{background:rgba(0,0,0,.15);border-radius:10px;padding:14px;margin-top:12px;display:grid;gap:10px}
+.win-step-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#ffd84d}
+.win-link{color:#fff;text-decoration:underline;font-weight:600;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.win-btn{background:#fff;color:#0078d7;border-color:#fff;font-weight:700}
+.win-btn:hover{background:#f0f7ff}
 </style>
 </head>
 <body>
@@ -321,6 +380,7 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 <symbol id="i-plus" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></symbol>
 <symbol id="i-ok" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol>
 <symbol id="i-bolt" viewBox="0 0 256 256"><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17Z"/></symbol>
+<symbol id="i-copy" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"/></symbol>
 </defs></svg>
 
 <header class="nav" id="nav">
@@ -416,13 +476,142 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
  </div>
 </section>
 
-<section id="how" class="rv" data-page="how">
+<section id="how" class="rv" data-page="home how">
  <div class="wrap">
   <div class="head"><h1 class="heading-2">Ready in three steps</h1></div>
   <div class="grid g3">
    <div class="step"><span class="n body-1">1</span><h3 class="heading-6">Download</h3><p class="body-3 muted">Get the installer for Windows or macOS and open it.</p></div>
    <div class="step"><span class="n body-1">2</span><h3 class="heading-6">Choose your pal</h3><p class="body-3 muted">Pick a character from the collections and give it a name. You can switch at any time.</p></div>
    <div class="step"><span class="n body-1">3</span><h3 class="heading-6">Get on with your day</h3><p class="body-3 muted">Your pal wanders, reacts and naps while you work.</p></div>
+  </div>
+
+  <div class="setup-guide-wrap">
+   <details class="setup-card" id="setup-guide">
+    <summary class="setup-summary">
+     <div class="setup-summary-left">
+      <span class="setup-badge caption-3">🛡️ First-Time Launch Guide</span>
+      <h3 class="heading-6">Security popup on first launch? Here&rsquo;s what to click</h3>
+      <p class="body-6 muted">How to easily open DeskPals in 2 clicks on macOS and Windows.</p>
+     </div>
+     <div class="setup-summary-right">
+      <span class="setup-toggle-pill caption-3">Visual Step-by-Step <svg class="ic"><use href="#i-plus"/></svg></span>
+     </div>
+    </summary>
+
+    <div class="setup-content">
+     <div class="setup-tabs" role="tablist">
+      <button class="setup-tab active" type="button" data-os="mac" role="tab" aria-selected="true">
+       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.71-.93 2.73.99.08 2.01-.48 2.63-1.23z"/></svg>
+       macOS Guide
+      </button>
+      <button class="setup-tab" type="button" data-os="win" role="tab" aria-selected="false">
+       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+       Windows Guide
+      </button>
+     </div>
+
+     <!-- macOS Pane -->
+     <div class="setup-pane" id="pane-mac">
+      <div class="setup-info-box">
+       <span style="font-size:20px;line-height:1">💡</span>
+       <p><strong>Why Apple shows this:</strong> DeskPals is 100% free and open-source. Apple requires developers to pay $99/year for certification, so macOS automatically quarantines newly downloaded independent software with a generic warning. The app is completely safe and intact.</p>
+      </div>
+
+      <div class="mockup-grid">
+       <div class="mockup-col">
+        <span class="mockup-col-title">⚠️ What Apple Displays:</span>
+        <div class="os-mockup">
+         <div class="mac-window">
+          <div class="mac-dots"><span class="mac-dot red"></span><span class="mac-dot yellow"></span><span class="mac-dot green"></span></div>
+          <span style="font-size:11px;opacity:.6">Applications</span>
+          <span style="font-size:11px;opacity:.6">?</span>
+         </div>
+         <div class="mac-alert-body">
+          <div class="mac-alert-icon">⚠️</div>
+          <div class="mac-alert-text">
+           <h4>&ldquo;DeskPals&rdquo; is damaged and can&rsquo;t be opened.</h4>
+           <p>You should move it to the Bin.<br><span style="font-size:11px;opacity:.7">Downloaded from your browser</span></p>
+          </div>
+         </div>
+         <div class="mac-alert-foot">
+          <button class="mac-btn" type="button">Cancel</button>
+          <button class="mac-btn" type="button" style="color:#ff6b8b">Move to Bin</button>
+         </div>
+        </div>
+       </div>
+
+       <div class="mockup-col">
+        <span class="mockup-col-title">✅ How to Open (Pick Either Method):</span>
+        <div class="solution-box">
+         <div style="display:grid;gap:8px">
+          <span class="caption-3" style="font-weight:700;color:var(--dark)">METHOD 1: MAC SETTINGS (2 CLICKS)</span>
+          <div class="settings-mockup">
+           <div class="settings-row">
+            <span class="settings-label">DeskPals was blocked from use because it is not from an identified developer.</span>
+            <span class="os-action-btn mac-blue">Open Anyway <span class="click-badge">👈 Click here</span></span>
+           </div>
+          </div>
+          <p class="caption-1 muted">Go to <strong>System Settings  &rarr; Privacy &amp; Security</strong>, scroll to Security, and click <strong>Open Anyway</strong>.</p>
+         </div>
+
+         <div style="border-top:1px dashed var(--line);padding-top:12px;display:grid;gap:8px">
+          <span class="caption-3" style="font-weight:700;color:var(--dark)">METHOD 2: TERMINAL (INSTANT 1-SECOND FIX)</span>
+          <div class="code-command-box">
+           <code>xattr -cr /Applications/DeskPals.app</code>
+           <button class="copy-pill" id="copy-xattr" type="button"><svg class="ic"><use href="#i-copy"/></svg> Copy</button>
+          </div>
+          <p class="caption-1 muted">Paste into Terminal &amp; hit enter to instantly clear the browser quarantine flag.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+
+     <!-- Windows Pane -->
+     <div class="setup-pane" id="pane-win" hidden>
+      <div class="setup-info-box">
+       <span style="font-size:20px;line-height:1">💡</span>
+       <p><strong>Why Windows shows this:</strong> Microsoft Defender SmartScreen protects users by warning about newly released files until enough community downloads establish cloud reputation. It takes just 2 clicks to proceed.</p>
+      </div>
+
+      <div class="mockup-grid">
+       <div class="mockup-col">
+        <span class="mockup-col-title">🛡️ Step 1: Click &ldquo;More info&rdquo;</span>
+        <div class="os-mockup win-mockup">
+         <div class="win-header">
+          <svg class="win-shield" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          <h4>Windows protected your PC</h4>
+         </div>
+         <div class="win-body">
+          <p>Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
+          <div class="win-step-box">
+           <span class="win-step-title">Action required:</span>
+           <span class="win-link">More info <span class="click-badge">👈 Click this link</span></span>
+          </div>
+         </div>
+        </div>
+       </div>
+
+       <div class="mockup-col">
+        <span class="mockup-col-title">🚀 Step 2: Click &ldquo;Run anyway&rdquo;</span>
+        <div class="os-mockup win-mockup">
+         <div class="win-header">
+          <svg class="win-shield" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          <h4>Windows protected your PC</h4>
+         </div>
+         <div class="win-body">
+          <p style="font-size:12px;opacity:.9;margin-bottom:8px">App: DeskPals-win-x64.exe<br>Publisher: Unknown publisher</p>
+          <div class="win-step-box" style="flex-direction:row;align-items:center;justify-content:space-between">
+           <button class="mac-btn" type="button" style="background:rgba(255,255,255,.15);border:none;color:#fff">Don&rsquo;t run</button>
+           <button class="os-action-btn win-btn" type="button">Run anyway <span class="click-badge">👈 Click here</span></button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </details>
   </div>
  </div>
 </section>
@@ -943,6 +1132,46 @@ dlm.addEventListener("keydown",function(e){if(e.key==="Escape")closeDl();
   }
  });
 })();
+
+// Setup guide tabs & copy command
+document.querySelectorAll(".setup-tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    var os=btn.dataset.os;
+    document.querySelectorAll(".setup-tab").forEach(function(t){
+      var active=t===btn;
+      t.classList.toggle("active",active);
+      t.setAttribute("aria-selected",active?"true":"false");
+    });
+    var macPane=document.getElementById("pane-mac");
+    var winPane=document.getElementById("pane-win");
+    if(macPane&&winPane){
+      macPane.hidden=os!=="mac";
+      winPane.hidden=os!=="win";
+    }
+  });
+});
+
+var copyBtn=document.getElementById("copy-xattr");
+if(copyBtn){
+  copyBtn.addEventListener("click",function(){
+    var code="xattr -cr /Applications/DeskPals.app";
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(code).then(function(){
+        copyBtn.innerHTML="<svg class=\"ic\"><use href=\"#i-ok\"/></svg> Copied!";
+        copyBtn.style.background="var(--mint)";
+        copyBtn.style.color="#1d1848";
+        setTimeout(function(){
+          copyBtn.innerHTML="<svg class=\"ic\"><use href=\"#i-copy\"/></svg> Copy";
+          copyBtn.style.removeProperty("background");
+          copyBtn.style.removeProperty("color");
+        },2000);
+      }).catch(function(){toast("Copied to clipboard!");});
+    }else{
+      var ta=document.createElement("textarea");ta.value=code;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);
+      toast("Copied to clipboard!");
+    }
+  });
+}
 
 // pals peeking into the screenshot slots
 document.querySelectorAll("[data-ph]").forEach(function(e){var k=document.createElement("div");k.className="peek";k.innerHTML=svg(PALS[+e.dataset.ph%PALS.length]);e.appendChild(k)});
