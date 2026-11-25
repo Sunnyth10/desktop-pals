@@ -924,10 +924,10 @@ dlm.addEventListener("keydown",function(e){if(e.key==="Escape")closeDl();
     latest.assets.forEach(function(a){
      var name=a.name.toLowerCase();
      var url=a.browser_download_url;
-     if(!url)return;
-     if(name.indexOf("arm64.dmg")>-1||name.indexOf("mac-arm64")>-1){DOWNLOADS.macArm=url;var el=document.querySelector('.dlc[data-k="macArm"] a');if(el)el.href=url}
-     else if(name.indexOf("x64.dmg")>-1||name.indexOf("mac-x64")>-1){DOWNLOADS.macIntel=url;var el=document.querySelector('.dlc[data-k="macIntel"] a');if(el)el.href=url}
-     else if(name.indexOf("win")>-1&&name.indexOf(".exe")>-1){DOWNLOADS.win=url;var el=document.querySelector('.dlc[data-k="win"] a');if(el)el.href=url;var hb=document.querySelector('.dlrow a[data-dl="win"]');if(hb)hb.href=url}
+     if(!url||name.indexOf(".blockmap")>-1||name.indexOf(".yml")>-1)return;
+     if(name.endsWith(".dmg")&&(name.indexOf("arm64")>-1||name.indexOf("apple")>-1)){DOWNLOADS.macArm=url;var el=document.querySelector('.dlc[data-k="macArm"] a');if(el)el.href=url}
+     else if(name.endsWith(".dmg")&&(name.indexOf("x64")>-1||name.indexOf("intel")>-1||name.indexOf("arm64")===-1)){DOWNLOADS.macIntel=url;var el=document.querySelector('.dlc[data-k="macIntel"] a');if(el)el.href=url}
+     else if(name.endsWith(".exe")){DOWNLOADS.win=url;var el=document.querySelector('.dlc[data-k="win"] a');if(el)el.href=url;var hb=document.querySelector('.dlrow a[data-dl="win"]');if(hb)hb.href=url}
     });
    }
   })
