@@ -313,64 +313,106 @@ a.card{color:inherit;transition:transform .5s var(--ease)}a.card:hover{transform
 .fs{min-height:24px}
 .mood{display:flex;gap:8px;flex-wrap:wrap}
 
-/* First time setup guide */
-.setup-guide-wrap{margin-top:40px;width:100%}
-.setup-card{border:2px solid var(--line);border-radius:20px;background:var(--paper);box-shadow:6px 6px 0 var(--line);padding:0;overflow:hidden;transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
-.setup-summary{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none;user-select:none;transition:background-color .2s var(--ease)}
-.setup-summary::-webkit-details-marker{display:none}
-.setup-summary:hover{background:var(--surface)}
-details.setup-card[open] .setup-summary{border-bottom:2px solid var(--line);background:var(--surface)}
-.setup-summary-left{display:grid;gap:6px}
-.setup-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:9999px;background:var(--butter);color:#1d1848;border:1.5px solid var(--line);font-weight:700;width:fit-content}
-.setup-toggle-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;background:var(--dark);color:#f4f1ff;border:1.5px solid var(--line);font-weight:700;white-space:nowrap;transition:background-color .3s var(--ease),transform .3s var(--ease)}
-.setup-toggle-pill .ic{transition:transform .4s var(--ease);width:16px;height:16px}
-details.setup-card[open] .setup-toggle-pill{background:var(--coral)}
-details.setup-card[open] .setup-toggle-pill .ic{transform:rotate(45deg)}
-.setup-content{padding:28px;display:grid;gap:24px}
-.setup-tabs{display:flex;gap:12px;border-bottom:2px solid var(--line);padding-bottom:16px;flex-wrap:wrap}
-.setup-tab{padding:10px 20px;border-radius:12px;border:2px solid var(--line);background:var(--paper);color:var(--ink);font:inherit;font-weight:700;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s var(--ease)}
-.setup-tab.active{background:var(--dark);color:#f4f1ff;box-shadow:3px 3px 0 var(--line)}
-.setup-tab:hover:not(.active){background:var(--surface);transform:translateY(-2px)}
-.setup-pane{display:grid;gap:24px}
-.setup-info-box{padding:14px 18px;border-radius:14px;background:var(--surface);border:1.5px solid var(--line);font-size:14px;line-height:22px;display:flex;gap:12px;align-items:flex-start}
-.setup-info-box p{margin:0}
-.mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start}
-.mockup-col{display:grid;gap:12px}
-.mockup-col-title{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
-.os-mockup{border:2px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:4px 4px 0 var(--line);background:#1a1926;color:#f4f1ff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.mac-window{background:#232230;border-bottom:1px solid rgba(255,255,255,.1);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
-.mac-dots{display:flex;gap:6px}
-.mac-dot{width:10px;height:10px;border-radius:50%}
-.mac-dot.red{background:#ff5f56}.mac-dot.yellow{background:#ffbd2e}.mac-dot.green{background:#27c93f}
-.mac-alert-body{padding:20px;display:flex;gap:16px;align-items:flex-start}
-.mac-alert-icon{font-size:38px;line-height:1}
-.mac-alert-text h4{font-size:15px;font-weight:700;color:#fff;line-height:20px;margin-bottom:6px}
-.mac-alert-text p{font-size:13px;line-height:18px;color:#c0bdd8;margin:0}
-.mac-alert-foot{padding:0 20px 18px;display:flex;justify-content:flex-end;gap:10px}
-.mac-btn{padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:12px;font-weight:500;cursor:default}
-.solution-box{border:2px solid var(--line);border-radius:16px;background:var(--paper);padding:20px;display:grid;gap:16px;box-shadow:4px 4px 0 var(--line)}
-.click-badge{display:inline-flex;align-items:center;gap:6px;background:var(--coral);color:#fff;padding:3px 8px;border-radius:9999px;font-size:11px;font-weight:700;animation:badgeBounce 1.5s infinite ease-in-out}
-@keyframes badgeBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
-.settings-mockup{border:1.5px solid var(--line);border-radius:12px;background:var(--surface);padding:14px;display:grid;gap:10px}
-.settings-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.settings-label{font-size:13px;line-height:18px;font-weight:500;max-width:320px}
-.os-action-btn{padding:8px 16px;border-radius:8px;border:2px solid var(--line);font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:2px 2px 0 var(--line);transition:transform .2s var(--ease)}
-.os-action-btn:hover{transform:translateY(-1px);box-shadow:3px 3px 0 var(--line)}
-.os-action-btn.mac-blue{background:#2a75d3;color:#fff;border-color:#1d1848}
-.code-command-box{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#181822;color:#7ee787;border:2px solid var(--line);border-radius:10px;padding:8px 12px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px}
-.code-command-box code{overflow-x:auto;white-space:nowrap}
-.copy-pill{border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;transition:all .2s var(--ease)}
-.copy-pill:hover{background:var(--mint);color:#1d1848}
-.win-mockup{background:#0078d7;color:#fff}
-.win-header{padding:18px 20px 10px;display:flex;align-items:center;gap:10px}
-.win-shield{width:24px;height:24px;flex-shrink:0}
-.win-header h4{font-size:18px;font-weight:600;margin:0}
-.win-body{padding:0 20px 20px;font-size:13px;line-height:19px;color:rgba(255,255,255,.9)}
-.win-step-box{background:rgba(0,0,0,.15);border-radius:10px;padding:14px;margin-top:12px;display:grid;gap:10px}
-.win-step-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#ffd84d}
-.win-link{color:#fff;text-decoration:underline;font-weight:600;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.win-btn{background:#fff;color:#0078d7;border-color:#fff;font-weight:700}
-.win-btn:hover{background:#f0f7ff}
+/* ===== Timeline Guide Styles ===== */
+.o2{--o-ink:var(--ink,#1d1848);--o-paper:var(--paper,#fffdf6);--o-line:var(--line,#1d1848);--o-muted:var(--muted,#4d4a7a);--o-surface:var(--surface,#e4ecff);--o-butter:var(--butter,#ffd84d);--o-coral:var(--coral,#ff6b8b);--o-mint:var(--mint,#4fd9b0);--o-ease:var(--ease,cubic-bezier(.22,1,.36,1));color:var(--o-ink);display:grid;gap:32px;font-family:inherit}
+.o2 *{box-sizing:border-box}.o2 h2,.o2 h3,.o2 p{margin:0}
+.o2 :focus-visible{outline:3px solid var(--o-butter);outline-offset:3px}
+.o2-head{display:grid;gap:12px;justify-items:center;text-align:center}
+.o2-pill{padding:2px 12px;border:2px solid var(--o-line);border-radius:9999px;background:var(--o-mint);color:#1d1848;font-weight:600;font-size:13px}
+.o2-head h2{font-size:clamp(26px,4.2vw,42px);line-height:1.12;font-weight:700;max-width:24ch}
+.o2-head p{color:var(--o-muted);max-width:52ch}
+/* big OS picker */
+.o2-os{display:grid;gap:16px;grid-template-columns:1fr 1fr;max-width:640px;width:100%;margin:0 auto}
+.o2-card{position:relative;display:grid;justify-items:center;gap:6px;padding:22px 12px 18px;border:2px solid var(--o-line);border-radius:28px;background:var(--o-paper);color:var(--o-ink);font:inherit;cursor:pointer;transition:transform .5s var(--o-ease),box-shadow .5s var(--o-ease),background-color .3s var(--o-ease)}
+.o2-card svg{width:44px;height:44px;fill:currentColor}
+.o2-card b{font-size:18px}.o2-card span{font-size:13px;color:var(--o-muted)}
+.o2-card:hover{transform:translateY(-4px) rotate(-.6deg)}
+.o2-card[aria-selected=true]{background:var(--o-butter);color:#1d1848;box-shadow:6px 6px 0 var(--o-line)}
+.o2-card[aria-selected=true] span{color:#4a4470}
+.o2-card[aria-selected=true]::after{content:"✓";position:absolute;top:10px;right:12px;width:24px;height:24px;border-radius:50%;background:#1d1848;color:#fff;display:grid;place-items:center;font-size:13px}
+.o2-why{display:flex;gap:12px;align-items:flex-start;padding:16px 20px;border:2px dashed var(--o-line);border-radius:22px;line-height:1.55;color:var(--o-muted);max-width:760px;margin:0 auto;width:100%}
+.o2-why b{color:var(--o-ink)}
+.o2-i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--o-butter);color:#1d1848;display:grid;place-items:center;font-weight:700;font-size:14px}
+.o2-seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border:2px solid var(--o-line);border-radius:9999px;background:var(--o-paper);justify-self:center}
+.o2-seg[hidden]{display:none}
+.o2-seg button{white-space:nowrap;border:0;background:none;color:var(--o-ink);font:inherit;font-weight:600;font-size:14px;padding:7px 16px;border-radius:9999px;cursor:pointer}
+.o2-seg button[aria-pressed=true]{background:var(--o-ink);color:var(--o-paper)}
+/* timeline: z-index and opacity fix so line NEVER overlaps number */
+.o2-list{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:40px;animation:o2-in .5s var(--o-ease)}
+@keyframes o2-in{from{opacity:0;transform:translateY(14px)}}
+.o2-list::before,.o2-list::after{content:"";position:absolute;top:0;bottom:0;left:24px;width:4px;border-radius:4px;background:color-mix(in srgb,var(--o-line) 25%,transparent);z-index:0;pointer-events:none}
+.o2-list::after{background:var(--o-coral);transform:scaleY(var(--p,0));transform-origin:50% 0;z-index:1}
+@media(min-width:900px){.o2-list::before,.o2-list::after{left:calc(50% - 2px)}}
+.o2-step{position:relative;z-index:2;display:grid;gap:16px;padding-left:64px}
+.o2-node{position:absolute;left:0;top:0;width:52px;height:52px;border-radius:50%;border:3px solid var(--o-line);background:var(--o-paper);display:grid;place-items:center;font-weight:700;font-size:20px;z-index:5;transition:background-color .4s var(--o-ease),transform .5s var(--o-ease)}
+.o2-step.on .o2-node{background:var(--o-coral);color:#1d1848;transform:scale(1.12)}
+.o2-step.seen .o2-node{background:var(--o-mint);color:#1d1848}
+.o2-txt,.o2-vis{opacity:.55;transition:opacity .5s var(--o-ease)}
+.o2-step.on .o2-txt,.o2-step.on .o2-vis,.o2-step.seen .o2-txt,.o2-step.seen .o2-vis{opacity:1}
+.o2-txt{display:grid;gap:8px;align-content:center}
+.o2-txt small{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--o-muted)}
+.o2-txt h3{font-size:clamp(20px,2.6vw,26px);line-height:1.2}
+.o2-txt p{line-height:1.6;color:var(--o-muted)}.o2-txt p b{color:var(--o-ink)}
+.o2-vis{position:relative;min-height:260px;display:grid;place-items:center;padding:28px 18px;border:2px solid var(--o-line);border-radius:28px;background:radial-gradient(color-mix(in srgb,var(--o-line) 22%,transparent) 1.5px,transparent 1.5px) 0 0/18px 18px,var(--o-surface);overflow:hidden;box-shadow:6px 6px 0 var(--o-line)}
+.o2-win{width:min(100%,430px)}
+@media(min-width:900px){
+ .o2-step{grid-template-columns:1fr 1fr;gap:72px;padding-left:0;align-items:center}
+ .o2-node{left:calc(50% - 26px)}
+ .o2-step:nth-child(even) .o2-txt{order:2}
+ .o2-step:nth-child(odd) .o2-txt{text-align:right}
+ .o2-step:nth-child(odd) .o2-txt .o2-code{text-align:left}
+}
+.o2-code{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;background:#161625;border:2px solid var(--o-line);border-radius:12px;margin-top:4px}
+.o2-code code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#7ef0b8;font-size:13px;overflow-x:auto;white-space:nowrap}
+.o2-copy{flex:none;padding:5px 14px;border:2px solid #8f87d6;border-radius:8px;background:none;color:#f4f1ff;font:inherit;font-weight:600;font-size:13px;cursor:pointer}
+.o2-copy[data-done]{background:var(--o-mint);color:#1d1848;border-color:var(--o-mint)}
+/* cursor with label */
+.o2-cur{position:absolute;left:0;top:0;z-index:5;opacity:0;pointer-events:none;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35));transition:transform 1.1s var(--o-ease)}
+.o2-cur.show{opacity:1}
+.o2-cur svg{width:30px;height:30px;display:block}
+.o2-cur b{position:absolute;left:24px;top:20px;padding:3px 10px;border-radius:9999px;background:var(--o-coral);color:#1d1848;font-size:12px;white-space:nowrap;opacity:0;transform:scale(.7);transform-origin:0 0;transition:opacity .3s var(--o-ease),transform .4s var(--o-ease)}
+.o2-cur.arrived b{opacity:1;transform:none}
+.o2-cur::after{content:"";position:absolute;left:-10px;top:-10px;width:28px;height:28px;border-radius:50%;border:3px solid #1d1848;opacity:0}
+.o2-cur.click::after{animation:o2-rip .6s var(--o-ease)}
+@keyframes o2-rip{from{opacity:1;transform:scale(.3)}to{opacity:0;transform:scale(1.8)}}
+.hit{animation:o2-hit .35s var(--o-ease)}@keyframes o2-hit{50%{transform:scale(.92)}}
+.glow{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--o-coral)}
+/* mock windows */
+.mk{border-radius:14px;overflow:hidden;font-size:14px;line-height:1.4;box-shadow:0 18px 40px rgba(29,24,72,.3)}
+.mk-mac{background:#232334;color:#f4f1ff}
+.mk-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#1b1b2b;border-bottom:1px solid #3a3a55;font-size:12px;color:#9a97c0}
+.mk-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.mk-bar i:nth-child(2){background:#febc2e}.mk-bar i:nth-child(3){background:#28c840}
+.mk-bar span{margin:0 auto}
+.mk-body{display:flex;gap:16px;padding:20px}.mk-body svg{flex:none;width:44px;height:44px}
+.mk-body h4{margin:0 0 4px;font-size:16px}.mk-body p{color:#c9c6ea;font-size:13px}
+.mk-btns{display:flex;justify-content:flex-end;gap:8px;padding:0 20px 18px}
+.mk-b{padding:5px 14px;border-radius:7px;border:1px solid #4a4a6a;background:#343450;color:#f4f1ff;font-size:13px}.mk-b.red{color:#ff7c93}
+.mk-set{display:grid;grid-template-columns:140px 1fr}
+.mk-side{padding:12px 8px;background:#1b1b2b;display:grid;gap:2px;align-content:start;font-size:13px}.mk-side span{padding:6px 10px;border-radius:7px;color:#c9c6ea}
+.mk-pane{padding:16px;display:grid;gap:12px;align-content:start}.mk-pane h4{margin:0;font-size:16px}
+.mk-box{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px;background:#2c2c44;border-radius:10px;font-size:13px}
+.mk-open{padding:7px 14px;border-radius:7px;background:#2f6fd0;color:#fff;font-weight:600;font-size:13px}
+.mk-term{background:#141420;color:#e8e6ff;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;padding:18px;min-height:120px}.mk-term .pr{color:#7ef0b8}
+.mk-term .ty{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;max-width:100%;animation:o2-type 2.2s steps(38) .3s both}
+@keyframes o2-type{from{width:0}to{width:38ch}}
+.mk-win{background:#2f78d4;color:#fff;padding:20px;display:grid;gap:12px}
+.mk-win h4{margin:0;font-size:19px;display:flex;align-items:center;gap:10px}.mk-win h4 svg{width:26px;height:26px;fill:#fff}
+.mk-win p{font-size:13px;opacity:.92}
+.mk-act{padding:14px;background:rgba(0,0,0,.2);border-radius:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.mk-link{font-weight:600;text-decoration:underline;text-underline-offset:3px;font-size:15px;padding:2px 4px;border-radius:4px}
+.mk-run{padding:8px 16px;border-radius:6px;background:#fff;color:#1d4fa0;font-weight:700;font-size:14px}.mk-no{padding:8px 16px;border-radius:6px;background:rgba(255,255,255,.18);font-size:14px}
+.mk-done{display:grid;justify-items:center;gap:10px;text-align:center}
+.mk-done svg{width:110px;height:110px;animation:o2-hop 1s var(--o-ease) infinite alternate}
+@keyframes o2-hop{to{transform:translateY(-10px) rotate(3deg)}}
+.mk-say{padding:8px 16px;border:2px solid #1d1848;border-radius:16px;background:#fffdf6;color:#1d1848;font-weight:700}
+/* finish banner */
+.o2-end{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px;border:2px solid var(--o-line);border-radius:28px;background:var(--o-butter);color:#1d1848;box-shadow:6px 6px 0 var(--o-line)}
+.o2-end b{font-size:18px}
+.o2-dl{display:flex;gap:8px;flex-wrap:wrap}
+.o2-btn{display:inline-flex;padding:9px 18px;border:2px solid #1d1848;border-radius:9999px;background:#fffdf6;color:#1d1848;font-weight:600;font-size:14px;text-decoration:none;box-shadow:3px 3px 0 #1d1848;transition:transform .4s var(--o-ease),box-shadow .4s var(--o-ease)}
+.o2-btn:hover{transform:translateY(-2px);box-shadow:5px 5px 0 #1d1848}
+@media(max-width:480px){.o2-card{padding:16px 8px 14px}.o2-card svg{width:34px;height:34px}.o2-seg button{padding:6px 10px;font-size:13px}.o2-set,.mk-set{grid-template-columns:110px 1fr}}
+@media(prefers-reduced-motion:reduce){.o2 *,.o2 *::after{animation:none!important;transition:none!important}.mk-term .ty{width:auto}}
 </style>
 </head>
 <body>
@@ -485,133 +527,25 @@ details.setup-card[open] .setup-toggle-pill .ic{transform:rotate(45deg)}
    <div class="step"><span class="n body-1">3</span><h3 class="heading-6">Get on with your day</h3><p class="body-3 muted">Your pal wanders, reacts and naps while you work.</p></div>
   </div>
 
-  <div class="setup-guide-wrap">
-   <details class="setup-card" id="setup-guide">
-    <summary class="setup-summary">
-     <div class="setup-summary-left">
-      <span class="setup-badge caption-3">🛡️ First-Time Launch Guide</span>
-      <h3 class="heading-6">Security popup on first launch? Here&rsquo;s what to click</h3>
-      <p class="body-6 muted">How to easily open DeskPals in 2 clicks on macOS and Windows.</p>
-     </div>
-     <div class="setup-summary-right">
-      <span class="setup-toggle-pill caption-3">Visual Step-by-Step <svg class="ic"><use href="#i-plus"/></svg></span>
-     </div>
-    </summary>
-
-    <div class="setup-content">
-     <div class="setup-tabs" role="tablist">
-      <button class="setup-tab active" type="button" data-os="mac" role="tab" aria-selected="true">
-       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.93-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.71-.93 2.73.99.08 2.01-.48 2.63-1.23z"/></svg>
-       macOS Guide
-      </button>
-      <button class="setup-tab" type="button" data-os="win" role="tab" aria-selected="false">
-       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
-       Windows Guide
-      </button>
-     </div>
-
-     <!-- macOS Pane -->
-     <div class="setup-pane" id="pane-mac">
-      <div class="setup-info-box">
-       <span style="font-size:20px;line-height:1">💡</span>
-       <p><strong>Why Apple shows this:</strong> DeskPals is 100% free and open-source. Apple requires developers to pay $99/year for certification, so macOS automatically quarantines newly downloaded independent software with a generic warning. The app is completely safe and intact.</p>
-      </div>
-
-      <div class="mockup-grid">
-       <div class="mockup-col">
-        <span class="mockup-col-title">⚠️ What Apple Displays:</span>
-        <div class="os-mockup">
-         <div class="mac-window">
-          <div class="mac-dots"><span class="mac-dot red"></span><span class="mac-dot yellow"></span><span class="mac-dot green"></span></div>
-          <span style="font-size:11px;opacity:.6">Applications</span>
-          <span style="font-size:11px;opacity:.6">?</span>
-         </div>
-         <div class="mac-alert-body">
-          <div class="mac-alert-icon">⚠️</div>
-          <div class="mac-alert-text">
-           <h4>&ldquo;DeskPals&rdquo; is damaged and can&rsquo;t be opened.</h4>
-           <p>You should move it to the Bin.<br><span style="font-size:11px;opacity:.7">Downloaded from your browser</span></p>
-          </div>
-         </div>
-         <div class="mac-alert-foot">
-          <button class="mac-btn" type="button">Cancel</button>
-          <button class="mac-btn" type="button" style="color:#ff6b8b">Move to Bin</button>
-         </div>
-        </div>
-       </div>
-
-       <div class="mockup-col">
-        <span class="mockup-col-title">✅ How to Open (Pick Either Method):</span>
-        <div class="solution-box">
-         <div style="display:grid;gap:8px">
-          <span class="caption-3" style="font-weight:700;color:var(--dark)">METHOD 1: MAC SETTINGS (2 CLICKS)</span>
-          <div class="settings-mockup">
-           <div class="settings-row">
-            <span class="settings-label">DeskPals was blocked from use because it is not from an identified developer.</span>
-            <span class="os-action-btn mac-blue">Open Anyway <span class="click-badge">👈 Click here</span></span>
-           </div>
-          </div>
-          <p class="caption-1 muted">Go to <strong>System Settings  &rarr; Privacy &amp; Security</strong>, scroll to Security, and click <strong>Open Anyway</strong>.</p>
-         </div>
-
-         <div style="border-top:1px dashed var(--line);padding-top:12px;display:grid;gap:8px">
-          <span class="caption-3" style="font-weight:700;color:var(--dark)">METHOD 2: TERMINAL (INSTANT 1-SECOND FIX)</span>
-          <div class="code-command-box">
-           <code>xattr -cr /Applications/DeskPals.app</code>
-           <button class="copy-pill" id="copy-xattr" type="button"><svg class="ic"><use href="#i-copy"/></svg> Copy</button>
-          </div>
-          <p class="caption-1 muted">Paste into Terminal &amp; hit enter to instantly clear the browser quarantine flag.</p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-
-     <!-- Windows Pane -->
-     <div class="setup-pane" id="pane-win" hidden>
-      <div class="setup-info-box">
-       <span style="font-size:20px;line-height:1">💡</span>
-       <p><strong>Why Windows shows this:</strong> Microsoft Defender SmartScreen protects users by warning about newly released files until enough community downloads establish cloud reputation. It takes just 2 clicks to proceed.</p>
-      </div>
-
-      <div class="mockup-grid">
-       <div class="mockup-col">
-        <span class="mockup-col-title">🛡️ Step 1: Click &ldquo;More info&rdquo;</span>
-        <div class="os-mockup win-mockup">
-         <div class="win-header">
-          <svg class="win-shield" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-          <h4>Windows protected your PC</h4>
-         </div>
-         <div class="win-body">
-          <p>Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
-          <div class="win-step-box">
-           <span class="win-step-title">Action required:</span>
-           <span class="win-link">More info <span class="click-badge">👈 Click this link</span></span>
-          </div>
-         </div>
-        </div>
-       </div>
-
-       <div class="mockup-col">
-        <span class="mockup-col-title">🚀 Step 2: Click &ldquo;Run anyway&rdquo;</span>
-        <div class="os-mockup win-mockup">
-         <div class="win-header">
-          <svg class="win-shield" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-          <h4>Windows protected your PC</h4>
-         </div>
-         <div class="win-body">
-          <p style="font-size:12px;opacity:.9;margin-bottom:8px">App: DeskPals-win-x64.exe<br>Publisher: Unknown publisher</p>
-          <div class="win-step-box" style="flex-direction:row;align-items:center;justify-content:space-between">
-           <button class="mac-btn" type="button" style="background:rgba(255,255,255,.15);border:none;color:#fff">Don&rsquo;t run</button>
-           <button class="os-action-btn win-btn" type="button">Run anyway <span class="click-badge">👈 Click here</span></button>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
+  <div class="setup-guide-wrap" style="margin-top:64px">
+   <section class="o2" id="open-guide-2" aria-labelledby="o2-t">
+    <div class="o2-head">
+     <span class="o2-pill">First launch help</span>
+     <h2 id="o2-t">Security popup? Two clicks and you’re in</h2>
+     <p>Choose your computer, then scroll. Each step plays as you reach it.</p>
     </div>
-   </details>
+    <div class="o2-os" role="tablist" aria-label="Choose your computer">
+     <button class="o2-card" role="tab" id="o2-t-mac" aria-selected="true" aria-controls="o2-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><b>I use a Mac</b><span>Apple Silicon or Intel</span></button>
+     <button class="o2-card" role="tab" id="o2-t-win" aria-selected="false" tabindex="-1" aria-controls="o2-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.5 10.5 3.5v7.5H3zM11.5 3.4 21 2v9h-9.5zM3 12h7.5v7.5L3 18.5zM11.5 12H21v9l-9.5-1.4z"/></svg><b>I use Windows</b><span>Windows 10 and 11</span></button>
+    </div>
+    <div class="o2-why"><span class="o2-i" aria-hidden="true">i</span><p id="o2-why"></p></div>
+    <div class="o2-seg" id="o2-seg" role="group" aria-label="Method">
+     <button type="button" data-m="set" aria-pressed="true">System Settings · 2 clicks</button>
+     <button type="button" data-m="term" aria-pressed="false">Terminal · 1 command</button>
+    </div>
+    <div id="o2-panel" role="tabpanel" aria-labelledby="o2-t-mac"><ol class="o2-list" id="o2-list"></ol></div>
+    <div class="o2-end"><b>Still need the installer?</b><div class="o2-dl" id="o2-dl"></div></div>
+   </section>
   </div>
  </div>
 </section>
@@ -1133,45 +1067,93 @@ dlm.addEventListener("keydown",function(e){if(e.key==="Escape")closeDl();
  });
 })();
 
-// Setup guide tabs & copy command
-document.querySelectorAll(".setup-tab").forEach(function(btn){
-  btn.addEventListener("click",function(){
-    var os=btn.dataset.os;
-    document.querySelectorAll(".setup-tab").forEach(function(t){
-      var active=t===btn;
-      t.classList.toggle("active",active);
-      t.setAttribute("aria-selected",active?"true":"false");
-    });
-    var macPane=document.getElementById("pane-mac");
-    var winPane=document.getElementById("pane-win");
-    if(macPane&&winPane){
-      macPane.hidden=os!=="mac";
-      winPane.hidden=os!=="win";
-    }
-  });
-});
+// ===== Timeline Guide Script =====
+(function(){
+ var root=document.getElementById("open-guide-2");if(!root)return;
+ var $=function(id){return document.getElementById(id)};
+ var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-var copyBtn=document.getElementById("copy-xattr");
-if(copyBtn){
-  copyBtn.addEventListener("click",function(){
-    var code="xattr -cr /Applications/DeskPals.app";
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(code).then(function(){
-        copyBtn.innerHTML="<svg class=\"ic\"><use href=\"#i-ok\"/></svg> Copied!";
-        copyBtn.style.background="var(--mint)";
-        copyBtn.style.color="#1d1848";
-        setTimeout(function(){
-          copyBtn.innerHTML="<svg class=\"ic\"><use href=\"#i-copy\"/></svg> Copy";
-          copyBtn.style.removeProperty("background");
-          copyBtn.style.removeProperty("color");
-        },2000);
-      }).catch(function(){toast("Copied to clipboard!");});
-    }else{
-      var ta=document.createElement("textarea");ta.value=code;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);
-      toast("Copied to clipboard!");
-    }
-  });
-}
+ // 1) Installer links (defaults to live DOWNLOADS from page)
+ var DL=window.DOWNLOADS||{win:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.2.0/DeskPals-win-x64.exe",macArm:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.2.0/DeskPals-mac-arm64.dmg",macIntel:"https://github.com/Sunnyth10/Deskpals/releases/download/v1.2.0/DeskPals-mac-x64.dmg"};
+
+ // 2) Mock screens. The element marked data-t is where the cursor clicks.
+ var SH="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z\"/></svg>";
+ var PAL="<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><path d=\"M16 78C8 50 22 18 50 18s42 32 34 60c-3 8-12 10-34 10S19 86 16 78z\" fill=\"#ffd84d\" stroke=\"#1d1848\" stroke-width=\"4\"/><circle cx=\"36\" cy=\"54\" r=\"7\" fill=\"#fff\" stroke=\"#1d1848\" stroke-width=\"3\"/><circle cx=\"64\" cy=\"54\" r=\"7\" fill=\"#fff\" stroke=\"#1d1848\" stroke-width=\"3\"/><circle cx=\"36\" cy=\"54\" r=\"3\" fill=\"#1d1848\"/><circle cx=\"64\" cy=\"54\" r=\"3\" fill=\"#1d1848\"/><path d=\"M44 68q6 6 12 0\" fill=\"none\" stroke=\"#1d1848\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>";
+ var bar=function(t){return"<div class=\"mk-bar\"><i></i><i></i><i></i><span>"+t+"</span></div>"};
+ var S={
+  warn:"<div class=\"mk mk-mac\">"+bar("Applications")+"<div class=\"mk-body\"><svg viewBox=\"0 0 48 48\"><path d=\"M24 4 2 42h44z\" fill=\"#ffd84d\" stroke=\"#1d1848\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M24 17v13\" stroke=\"#1d1848\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"36\" r=\"2.5\" fill=\"#1d1848\"/></svg><div><h4>“DeskPals” is damaged and can’t be opened.</h4><p>You should move it to the Bin.</p></div></div><div class=\"mk-btns\"><span class=\"mk-b\" data-t>Cancel</span><span class=\"mk-b red\">Move to Bin</span></div></div>",
+  priv:"<div class=\"mk mk-mac\">"+bar("System Settings")+"<div class=\"mk-set\"><div class=\"mk-side\"><span>Wi-Fi</span><span>Notifications</span><span>Appearance</span><span data-t>Privacy &amp; Security</span></div><div class=\"mk-pane\"><h4>Privacy &amp; Security</h4><div class=\"mk-box\">Location Services</div><div class=\"mk-box\">Contacts</div></div></div></div>",
+  open:"<div class=\"mk mk-mac\">"+bar("Privacy &amp; Security")+"<div class=\"mk-pane\"><h4>Security</h4><div class=\"mk-box\"><span>“DeskPals” was blocked to protect your Mac.</span><span class=\"mk-open\" data-t>Open Anyway</span></div></div></div>",
+  term:"<div class=\"mk mk-mac\">"+bar("Terminal")+"<div class=\"mk-term\"><span class=\"pr\">~ %</span> <span class=\"ty\">xattr -cr /Applications/DeskPals.app</span></div></div>",
+  more:"<div class=\"mk mk-win\"><h4>"+SH+"Windows protected your PC</h4><p>Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p><div class=\"mk-act\"><span class=\"mk-link\" data-t>More info</span></div></div>",
+  run:"<div class=\"mk mk-win\"><h4>"+SH+"Windows protected your PC</h4><p>App: DeskPals-win-x64.exe<br>Publisher: Unknown publisher</p><div class=\"mk-act\"><span class=\"mk-run\" data-t>Run anyway</span><span class=\"mk-no\">Don’t run</span></div></div>",
+  done:"<div class=\"mk-done\">"+PAL+"<span class=\"mk-say\">Hello! I’m here.</span></div>"
+ };
+
+ // 3) Guides: [title, text, scene, cursor label]
+ var G={
+  mac:{why:"<b>Why Apple shows this:</b> DeskPals is free and open-source, and Apple charges developers $99 a year for certification. Without it, macOS puts a generic warning on newly downloaded independent apps. The app itself is not damaged.",
+   dl:[["macArm","Apple Silicon"],["macIntel","Intel Mac"]],
+   set:[["See the warning","macOS says the app is “damaged”. Press <b>Cancel</b>, not Move to Bin.","warn","Cancel"],["Open System Settings","Go to <b>System Settings → Privacy &amp; Security</b>.","priv","Click here"],["Press Open Anyway","Scroll to <b>Security</b> and press <b>Open Anyway</b>. Confirm with <b>Open</b>, and your Mac password if asked.","open","Open Anyway"],["Meet your pal","DeskPals opens. You only do this once.","done"]],
+   term:[["Paste one command","Open <b>Terminal</b>, paste this command and press <b>Return</b>. It clears the browser’s quarantine flag.","term"],["Meet your pal","DeskPals now opens normally. You only do this once.","done"]]},
+  win:{why:"<b>Why Windows shows this:</b> Microsoft Defender SmartScreen warns about newly released files until enough people have downloaded them to build a reputation. It takes two clicks to continue.",
+   dl:[["win","Download for Windows"]],
+   main:[["Click “More info”","Windows says it protected your PC. Click the <b>More info</b> link.","more","Click here"],["Click “Run anyway”","Now click <b>Run anyway</b>. Not “Don’t run”.","run","Click here"],["Meet your pal","The installer starts and your pal says hello. You only do this once.","done"]]}
+ };
+
+ var os="mac",method="set",list=$("o2-list");
+ var CUR=function(l){return"<div class=\"o2-cur\"><svg viewBox=\"0 0 24 24\"><path d=\"M3 2 20 11.5l-7 1.8 4 7.7-3 1.5-4-7.8L4 20z\" fill=\"#fff\" stroke=\"#1d1848\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/></svg><b>"+(l||"Click here")+"</b></div>"};
+ var steps=function(){return os==="mac"?G.mac[method]:G.win.main};
+
+ function play(li){
+  var vis=li.querySelector(".o2-vis"),cur=vis.querySelector(".o2-cur"),tg=vis.querySelector("[data-t]");
+  if(!cur)return;if(!tg){cur.style.display="none";return}
+  clearTimeout(li._a);clearTimeout(li._b);cur.classList.remove("arrived","click");tg.classList.remove("glow","hit");
+  var at=function(){var a=vis.getBoundingClientRect(),r=tg.getBoundingClientRect();return"translate("+(r.left-a.left+r.width*.55)+"px,"+(r.top-a.top+r.height*.45)+"px)"};
+  cur.style.transition="none";cur.style.transform="translate("+vis.clientWidth*.85+"px,"+(vis.clientHeight+10)+"px)";void cur.offsetWidth;cur.classList.add("show");
+  if(reduce){cur.style.transform=at();cur.classList.add("arrived");tg.classList.add("glow");return}
+  li._a=setTimeout(function(){cur.style.transition="";cur.style.transform=at();tg.classList.add("glow");setTimeout(function(){cur.classList.add("arrived")},900)},500);
+  li._b=setTimeout(function(){cur.classList.remove("click");void cur.offsetWidth;cur.classList.add("click");tg.classList.add("hit")},1800);
+ }
+
+ function render(){
+  var g=G[os];$("o2-why").innerHTML=g.why;
+  $("o2-seg").hidden=os!=="mac";
+  $("o2-dl").innerHTML=g.dl.map(function(d){return"<a class=\"o2-btn\" data-k=\""+d[0]+"\" href=\"#\">"+d[1]+"</a>"}).join("");
+  $("o2-dl").querySelectorAll("a").forEach(function(a){var u=DL[a.dataset.k]||(window.DOWNLOADS&&window.DOWNLOADS[a.dataset.k]);if(u){a.href=u;a.target="_blank";a.rel="noopener"}});
+  list.innerHTML=steps().map(function(s,i){
+   var code=(os==="mac"&&method==="term"&&i===0)?'<div class="o2-code"><code id="o2-cmd">xattr -cr /Applications/DeskPals.app</code><button class="o2-copy" type="button" id="o2-copy">Copy</button></div>':"";
+   return'<li class="o2-step"><span class="o2-node">'+(i+1)+'</span><div class="o2-txt"><small>Step '+(i+1)+'</small><h3>'+s[0]+'</h3><p>'+s[1]+'</p>'+code+'</div><div class="o2-vis" aria-hidden="true"><div class="o2-win">'+S[s[2]]+'</div>'+CUR(s[3])+'</div></li>'}).join("");
+  var cb=$("o2-copy");if(cb)cb.addEventListener("click",copy);
+  act=-1;
+  progress();
+ }
+
+ var tick=0,act=-1;
+ function progress(){var r=list.getBoundingClientRect(),H=innerHeight,items=list.children,best=-1,bd=1e9;
+  list.style.setProperty("--p",Math.max(0,Math.min(1,(H*.5-r.top)/r.height)));
+  if(r.top<H*.8&&r.bottom>H*.2)[].forEach.call(items,function(li,i){var q=li.getBoundingClientRect(),d=Math.abs(q.top+q.height/2-H*.5);if(d<bd){bd=d;best=i}});
+  var after=r.bottom<=H*.2;
+  if(best!==act||after){act=best;[].forEach.call(items,function(li,i){li.classList.toggle("on",i===best);li.classList.toggle("seen",after||(best>=0&&i<best))});if(best>=0)play(items[best])}}
+ addEventListener("scroll",function(){if(tick)return;tick=requestAnimationFrame(function(){tick=0;progress()})},{passive:true});
+ addEventListener("resize",progress);
+
+ var tabs=[].slice.call(root.querySelectorAll(".o2-card"));
+ function pick(t,focus){os=t.id==="o2-t-win"?"win":"mac";method="set";
+  $("o2-seg").querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.m==="set")});
+  tabs.forEach(function(b){var on=b===t;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1});
+  $("o2-panel").setAttribute("aria-labelledby",t.id);render();if(focus)t.focus()}
+ tabs.forEach(function(t,i){t.addEventListener("click",function(){pick(t)});
+  t.addEventListener("keydown",function(e){var k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();pick(tabs[(i+k+tabs.length)%tabs.length],true)}})});
+ $("o2-seg").querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){method=b.dataset.m;$("o2-seg").querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});render()})});
+
+ function copy(){var cb=$("o2-copy"),cmd=$("o2-cmd");
+  var ok=function(){cb.textContent="Copied";cb.setAttribute("data-done","");setTimeout(function(){cb.textContent="Copy";cb.removeAttribute("data-done")},1600)};
+  var fb=function(){var r=document.createRange();r.selectNodeContents(cmd);var s=getSelection();s.removeAllRanges();s.addRange(r);try{if(document.execCommand("copy"))ok()}catch(e){}};
+  try{navigator.clipboard.writeText(cmd.textContent).then(ok,fb)}catch(e){fb()}}
+
+ if(/Win/i.test(navigator.userAgent))pick(tabs[1]);else render();
+})();
 
 // pals peeking into the screenshot slots
 document.querySelectorAll("[data-ph]").forEach(function(e){var k=document.createElement("div");k.className="peek";k.innerHTML=svg(PALS[+e.dataset.ph%PALS.length]);e.appendChild(k)});
